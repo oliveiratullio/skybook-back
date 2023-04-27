@@ -1,4 +1,3 @@
-import { addBook } from "../controllers/"
 const imageRomanceUrls = [
   {url:"https://m.media-amazon.com/images/I/51jF2bhZoIL.jpg", title: "Romance 1"},
   {url:"https://m.media-amazon.com/images/I/41ib3umSTOL.jpg", title: "Romance 2"},
@@ -8,7 +7,7 @@ const imageRomanceUrls = [
   
 ]
 
-const romancebooks =[
+export const romancebooks =[
   {  
 
     title: "Romance Fora de Época",
@@ -44,4 +43,3 @@ const romancebooks =[
    coverImageUrl: `${imageRomanceUrls[4].url}`
    }
 ]
-addBook(romancebooks)

@@ -1,18 +1,19 @@
 import {db} from "../database/database.connection.js"
-//adicionando e pegando os livros pela api
-export async function addBook() {   
+import { romancebooks } from "../models/books.models.js";
+
+export async function addBook(book) {   
+  console.log("book",book)
   try {
-    const result = await db.collections("books").insertMany(books);
+    const result = await db.collection("books").insertMany(book);
     console.log(`${result.insertedCount} livros adicionados ao banco de dados`);
   } catch (err) {
     console.log(err, "Erro ao adicionar livros");
   }
 }
-//addBook()
-export async function getAllBooks(req, res){
- 
+//addBook(romancebooks) 
+export  async function getAllBooks(req, res){
     try{
-        const books = await db.collections("books").find().toArray()
+        const books = await db.collection("books").find().toArray()
        res.status(201).send(books)
     }catch(err){
       console.log(err, "Não há livros");
