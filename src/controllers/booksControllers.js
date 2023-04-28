@@ -1,5 +1,7 @@
 import {db} from "../database/database.connection.js"
-import { romancebooks } from "../models/books.models.js";
+import { adventureBooks } from "../models/adventureBooks.models.js";
+import { selfHelpBooks } from "../models/ selfHelpBooks.models.js";
+import { suspenseBooks } from "../models/suspenseBooks.models.js";
 
 export async function addBook(book) {   
   console.log("book",book)
@@ -10,7 +12,7 @@ export async function addBook(book) {
     console.log(err, "Erro ao adicionar livros");
   }
 }
-//addBook(romancebooks) 
+//addBook(adventureBooks) 
 export  async function getAllBooks(req, res){
     try{
         const books = await db.collection("books").find().toArray()
