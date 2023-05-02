@@ -22,7 +22,7 @@ export  async function getAllBooks(req, res){
       res.status(500).send(err);
     }
     }
-    export async function searchOne(req,res){
+    export async function searchOneProduct(req,res){
       const {search} = req.query
       try{
       const products = await db
